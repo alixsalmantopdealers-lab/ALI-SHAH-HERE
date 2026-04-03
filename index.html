@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali Shah Here</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#020617;color:#fff}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 25px;background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);position:sticky;top:0}
+.left{color:#9ca3af}
+.center{font-size:22px}
+.right img{height:40px}
+
+.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;padding:30px}
+.cat{background:#1e293b;padding:20px;border-radius:15px;text-align:center;cursor:pointer;transition:0.3s}
+.cat:hover{transform:scale(1.08);box-shadow:0 0 20px #fff3}
+.cat img{width:100%;border-radius:10px}
+
+.page{display:none;padding:30px}
+.active{display:block}
+.back{cursor:pointer;margin-bottom:20px;color:#9ca3af}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.card{background:#1e293b;padding:15px;border-radius:12px;text-align:center;position:relative}
+.card img{width:100%;border-radius:10px}
+.price{color:#22c55e;font-weight:bold}
+.old{color:red;text-decoration:line-through;font-size:12px}
+button{margin-top:10px;padding:10px;border:none;border-radius:8px;background:#9ca3af;cursor:pointer}
+button:hover{background:#fff}
+
+/* POPUP */
+.popup{
+ position:fixed;bottom:20px;left:20px;
+ background:#111;padding:10px 15px;border-radius:10px;
+ font-size:12px;display:none
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="left">FREE FIRE</div>
+<div class="center">Ali Shah Here</div>
+<div class="right"><img src="whatsapp-logo.png"></div>
+</header>
+
+<div id="home" class="categories">
+<div class="cat" onclick="openPage('ids')"><img src="id.jpg"><h3>Free Fire IDs</h3></div>
+<div class="cat" onclick="openPage('panels')"><img src="panel.jpg"><h3>Panels & Files</h3></div>
+<div class="cat" onclick="openPage('bundles')"><img src="bundle.jpg"><h3>Bundles</h3></div>
+<div class="cat" onclick="openPage('tools')"><img src="tool.jpg"><h3>Toolkits</h3></div>
+<div class="cat" onclick="openPage('giveaway')"><img src="gift.jpg"><h3>Giveaway</h3></div>
+</div>
+
+<div id="ids" class="page">
+<div class="back" onclick="goBack()">⬅ Back</div>
+<h2>Free Fire IDs</h2>
+<div class="products">
+<div class="card">
+<img src="id1.jpg">
+<p>Level 70 ID</p>
+<div class="price">Rs 2500 <span class="old">Rs 4000</span></div>
+<button onclick="buy('Free Fire ID Level 70')">Buy Now</button>
+</div>
+</div>
+</div>
+
+<div id="panels" class="page"><div class="back" onclick="goBack()">⬅ Back</div><h2>Panels</h2></div>
+<div id="bundles" class="page"><div class="back" onclick="goBack()">⬅ Back</div><h2>Bundles</h2></div>
+<div id="tools" class="page"><div class="back" onclick="goBack()">⬅ Back</div><h2>Toolkits</h2></div>
+<div id="giveaway" class="page"><div class="back" onclick="goBack()">⬅ Back</div><h2>🎁 Giveaway</h2></div>
+
+<div class="popup" id="popup"></div>
+
+<script>
+function openPage(id){
+ document.getElementById('home').style.display='none';
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+}
+
+function goBack(){
+ document.getElementById('home').style.display='grid';
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+}
+
+function buy(product){
+ let num="923422531403";
+ let msg="I want to buy "+product;
+ window.open(`https://wa.me/${num}?text=${encodeURIComponent(msg)}`);
+}
+
+// FAKE LIVE ORDERS
+const names=["Ali","Usman","Ahmed","Zain","Faizan"];
+function showPopup(){
+ let p=document.getElementById('popup');
+ let name=names[Math.floor(Math.random()*names.length)];
+ p.innerText=name+" just bought an item";
+ p.style.display='block';
+ setTimeout(()=>p.style.display='none',3000);
+}
+setInterval(showPopup,5000);
+</script>
+
+</body>
+</html>
