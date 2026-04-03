@@ -1,40 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ali Shah Here</title>
+<title>Ali Shah Store</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#020617;color:#fff}
 
-header{display:flex;justify-content:space-between;align-items:center;padding:15px 25px;background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);position:sticky;top:0}
-.left{color:#9ca3af}
-.center{font-size:22px}
-.right img{height:40px}
-
-.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;padding:30px}
-.cat{background:#1e293b;padding:20px;border-radius:15px;text-align:center;cursor:pointer;transition:0.3s}
-.cat:hover{transform:scale(1.08);box-shadow:0 0 20px #fff3}
-.cat img{width:100%;border-radius:10px}
-
-.page{display:none;padding:30px}
-.active{display:block}
-.back{cursor:pointer;margin-bottom:20px;color:#9ca3af}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-.card{background:#1e293b;padding:15px;border-radius:12px;text-align:center;position:relative}
-.card img{width:100%;border-radius:10px}
-.price{color:#22c55e;font-weight:bold}
-.old{color:red;text-decoration:line-through;font-size:12px}
-button{margin-top:10px;padding:10px;border:none;border-radius:8px;background:#9ca3af;cursor:pointer}
-button:hover{background:#fff}
-
-/* POPUP */
-.popup{
- position:fixed;bottom:20px;left:20px;
- background:#111;padding:10px 15px;border-radius:10px;
- font-size:12px;display:none
+/* GAMING ANIMATED BACKGROUND */
+body{
+ margin:0;font-family:Arial;color:#fff;
+ background:linear-gradient(270deg,#020617,#0f172a,#0ea5e9,#1e293b);
+ background-size:600% 600%;
+ animation:bgMove 10s ease infinite;
 }
+@keyframes bgMove{
+ 0%{background-position:0% 50%}
+ 50%{background-position:100% 50%}
+ 100%{background-position:0% 50%}
+}
+
+/* ULTRA PRO GAMING NAVBAR */
+header{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:15px 40px;
+ background:linear-gradient(90deg,#020617,#0f172a);
+ border-bottom:2px solid #0ea5e9;
+ box-shadow:0 0 25px rgba(14,165,233,0.6);
+ position:sticky;
+ top:0;
+ z-index:1000;
+}
+
+header div{
+ font-weight:700;
+ letter-spacing:1px;
+}
+
+header div:first-child{
+ font-size:20px;
+ color:#22c55e;
+ text-shadow:0 0 10px #22c55e;
+}
+
+.center{
+ font-size:28px;
+ font-weight:900;
+ background:linear-gradient(90deg,#0ea5e9,#22c55e);
+ -webkit-background-clip:text;
+ -webkit-text-fill-color:transparent;
+ text-shadow:0 0 20px rgba(14,165,233,0.7);
+}
+
+.profile-img{
+ width:45px;
+ height:45px;
+ border-radius:50%;
+ border:2px solid #0ea5e9;
+ box-shadow:0 0 15px #0ea5e9;
+ transition:0.3s;
+}
+
+.profile-img:hover{
+ transform:scale(1.1);
+ box-shadow:0 0 25px #22c55e;
+}
+.center{
+ font-size:26px;
+ color:#0ea5e9;
+ letter-spacing:2px;
+ text-shadow:0 0 10px #0ea5e9;
+}
+
+/* PROFILE IMAGE */
+.profile-img{
+ width:40px;height:40px;border-radius:50%;
+ object-fit:cover;border:2px solid #0ea5e9;
+ cursor:pointer;
+}
+
+.categories{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+ gap:20px;padding:30px
+}
+.cat{
+ background:#1e293b;
+ padding:20px;border-radius:15px;text-align:center;cursor:pointer;
+ transition:0.3s;
+ box-shadow:0 0 10px #000
+}
+.cat:hover{
+ transform:scale(1.05);
+ background:#0ea5e9;
+}
+
+.page{display:none;padding:20px}
+.active{display:block}
+
+.slider{display:flex;overflow-x:auto;gap:10px;margin-top:10px}
+.slider::-webkit-scrollbar{display:none}
+.slide-img{min-width:120px;height:80px;border-radius:8px;background:#111}
+
+.id-box{background:#1e293b;padding:15px;border-radius:12px;margin-bottom:20px}
+
+.id-title{font-size:18px;font-weight:bold;margin-bottom:5px;color:#0ea5e9}
+.id-desc{font-size:14px;color:#cbd5f5;margin-bottom:10px}
+
+.buy-btn{
+ margin-top:10px;padding:10px;border:none;border-radius:8px;
+ background:#0ea5e9;color:#fff;width:100%;cursor:pointer
+}
+
+.products{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+ gap:20px
+}
+.card{background:#1e293b;padding:15px;border-radius:12px;text-align:center}
+
+.whatsapp{
+ position:fixed;bottom:20px;right:20px;
+ background:#25D366;border-radius:50%;padding:15px;
+ box-shadow:0 0 20px #25D366;cursor:pointer;
+ animation:float 2s infinite
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+.back{margin-bottom:15px;cursor:pointer;color:#0ea5e9}
 
 </style>
 </head>
@@ -42,38 +135,70 @@ button:hover{background:#fff}
 <body>
 
 <header>
-<div class="left">FREE FIRE</div>
-<div class="center">Ali Shah Here</div>
-<div class="right"><img src="whatsapp-logo.png"></div>
+<div>🔥 FREE FIRE</div>
+<div class="center">ALI SHAH STORE</div>
+<!-- یہاں اپنی DP image کا link لگانا -->
+<img src="your-profile.jpg" class="profile-img" onclick="contact()">
 </header>
 
 <div id="home" class="categories">
-<div class="cat" onclick="openPage('ids')"><img src="id.jpg"><h3>Free Fire IDs</h3></div>
-<div class="cat" onclick="openPage('panels')"><img src="panel.jpg"><h3>Panels & Files</h3></div>
-<div class="cat" onclick="openPage('bundles')"><img src="bundle.jpg"><h3>Bundles</h3></div>
-<div class="cat" onclick="openPage('tools')"><img src="tool.jpg"><h3>Toolkits</h3></div>
-<div class="cat" onclick="openPage('giveaway')"><img src="gift.jpg"><h3>Giveaway</h3></div>
+<div class="cat" onclick="openPage('ids')">Free Fire IDs</div>
+<div class="cat" onclick="openPage('bundles')">Premium Bundles</div>
+<div class="cat" onclick="openPage('giveaway')">Daily Giveaway</div>
 </div>
 
+<!-- IDS -->
 <div id="ids" class="page">
 <div class="back" onclick="goBack()">⬅ Back</div>
 <h2>Free Fire IDs</h2>
+
+<script>
+for(let i=1;i<=7;i++){
+ document.write(`
+ <div class='id-box'>
+ <div class='id-title'>Level: 70 | ID ${i}</div>
+ <div class='id-desc'>Rare skins, high rank account, full access available</div>
+ <div class='slider'>
+ ${Array(7).fill("<div class='slide-img'></div>").join("")}
+ </div>
+ <button class='buy-btn' onclick="buy('ID ${i}')">2500 PKR - Buy</button>
+ </div>
+ `);
+}
+</script>
+
+</div>
+
+<!-- BUNDLES -->
+<div id="bundles" class="page">
+<div class="back" onclick="goBack()">⬅ Back</div>
+<h2>Premium Bundles</h2>
 <div class="products">
-<div class="card">
-<img src="id1.jpg">
-<p>Level 70 ID</p>
-<div class="price">Rs 2500 <span class="old">Rs 4000</span></div>
-<button onclick="buy('Free Fire ID Level 70')">Buy Now</button>
-</div>
+
+<script>
+for(let i=1;i<=48;i++){
+ document.write(`
+ <div class='card'>
+ <div style='height:150px;background:#111;border-radius:10px'></div>
+ <button class='buy-btn' onclick="buy('Bundle ${i}')">500 PKR - Buy</button>
+ </div>
+ `);
+}
+</script>
+
 </div>
 </div>
 
-<div id="panels" class="page"><div class="back" onclick="goBack()">⬅ Back</div><h2>Panels</h2></div>
-<div id="bundles" class="page"><div class="back" onclick="goBack()">⬅ Back</div><h2>Bundles</h2></div>
-<div id="tools" class="page"><div class="back" onclick="goBack()">⬅ Back</div><h2>Toolkits</h2></div>
-<div id="giveaway" class="page"><div class="back" onclick="goBack()">⬅ Back</div><h2>🎁 Giveaway</h2></div>
+<!-- GIVEAWAY -->
+<div id="giveaway" class="page">
+<div class="back" onclick="goBack()">⬅ Back</div>
+<h2>Daily Giveaway</h2>
+<div class="id-box">Join Daily Giveaway
+<button class="buy-btn" onclick="contact()">Join Now</button>
+</div>
+</div>
 
-<div class="popup" id="popup"></div>
+<div class="whatsapp" onclick="contact()">💬</div>
 
 <script>
 function openPage(id){
@@ -83,26 +208,17 @@ function openPage(id){
 }
 
 function goBack(){
- document.getElementById('home').style.display='grid';
  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById('home').style.display='grid';
 }
 
 function buy(product){
- let num="923422531403";
- let msg="I want to buy "+product;
- window.open(`https://wa.me/${num}?text=${encodeURIComponent(msg)}`);
+ window.open(`https://wa.me/923422531403?text=I want to buy ${product}`);
 }
 
-// FAKE LIVE ORDERS
-const names=["Ali","Usman","Ahmed","Zain","Faizan"];
-function showPopup(){
- let p=document.getElementById('popup');
- let name=names[Math.floor(Math.random()*names.length)];
- p.innerText=name+" just bought an item";
- p.style.display='block';
- setTimeout(()=>p.style.display='none',3000);
+function contact(){
+ window.open('https://wa.me/923422531403');
 }
-setInterval(showPopup,5000);
 </script>
 
 </body>
