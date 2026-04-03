@@ -1,10 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="ur">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Ali Shah Store</title>
-
 <style>
 
 /* GAMING ANIMATED BACKGROUND */
@@ -129,29 +129,40 @@ header div:first-child{
 
 .back{margin-bottom:15px;cursor:pointer;color:#0ea5e9}
 
+
+
+
+/* Simple Floating Buttons */
+.cat{
+ animation:floatCat 2s ease-in-out infinite;
+}
+
+@keyframes floatCat{
+ 0%{transform:translateY(0)}
+ 50%{transform:translateY(-6px)}
+ 100%{transform:translateY(0)}
+}
+
+ 50%{filter:blur(12px) brightness(1.8)}
+ 100%{filter:blur(5px) brightness(1)}
+}
 </style>
 </head>
-
 <body>
-
 <header>
-<div>🔥 FREE FIRE</div>
-<div class="center">ALI SHAH STORE</div>
+<div class="center">ALI SHAH FF STORE</div>
 <!-- یہاں اپنی DP image کا link لگانا -->
-<img src="your-profile.jpg" class="profile-img" onclick="contact()">
+<img class="profile-img" onclick="contact()" src="your-profile.jpg"/>
 </header>
-
-<div id="home" class="categories">
+<div class="categories" id="home">
 <div class="cat" onclick="openPage('ids')">Free Fire IDs</div>
 <div class="cat" onclick="openPage('bundles')">Premium Bundles</div>
 <div class="cat" onclick="openPage('giveaway')">Daily Giveaway</div>
 </div>
-
 <!-- IDS -->
-<div id="ids" class="page">
+<div class="page" id="ids">
 <div class="back" onclick="goBack()">⬅ Back</div>
 <h2>Free Fire IDs</h2>
-
 <script>
 for(let i=1;i<=7;i++){
  document.write(`
@@ -166,15 +177,12 @@ for(let i=1;i<=7;i++){
  `);
 }
 </script>
-
 </div>
-
 <!-- BUNDLES -->
-<div id="bundles" class="page">
+<div class="page" id="bundles">
 <div class="back" onclick="goBack()">⬅ Back</div>
 <h2>Premium Bundles</h2>
 <div class="products">
-
 <script>
 for(let i=1;i<=48;i++){
  document.write(`
@@ -185,21 +193,17 @@ for(let i=1;i<=48;i++){
  `);
 }
 </script>
-
 </div>
 </div>
-
 <!-- GIVEAWAY -->
-<div id="giveaway" class="page">
+<div class="page" id="giveaway">
 <div class="back" onclick="goBack()">⬅ Back</div>
 <h2>Daily Giveaway</h2>
 <div class="id-box">Join Daily Giveaway
 <button class="buy-btn" onclick="contact()">Join Now</button>
 </div>
 </div>
-
 <div class="whatsapp" onclick="contact()">💬</div>
-
 <script>
 function openPage(id){
  document.getElementById('home').style.display='none';
@@ -220,6 +224,5 @@ function contact(){
  window.open('https://wa.me/923422531403');
 }
 </script>
-
 </body>
 </html>
