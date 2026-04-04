@@ -1,228 +1,328 @@
 <!DOCTYPE html>
-
 <html lang="ur">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ali Shah Store</title>
+
 <style>
 
-/* GAMING ANIMATED BACKGROUND */
+/* BACKGROUND */
 body{
- margin:0;font-family:Arial;color:#fff;
- background:linear-gradient(270deg,#020617,#0f172a,#0ea5e9,#1e293b);
- background-size:600% 600%;
- animation:bgMove 10s ease infinite;
+margin:0;
+font-family:Arial;
+color:#fff;
+background:linear-gradient(270deg,#020617,#0f172a,#0ea5e9,#1e293b);
+background-size:600% 600%;
+animation:bgMove 10s ease infinite;
 }
+
 @keyframes bgMove{
- 0%{background-position:0% 50%}
- 50%{background-position:100% 50%}
- 100%{background-position:0% 50%}
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
 
-/* ULTRA PRO GAMING NAVBAR */
+/* NAVBAR */
+
 header{
- display:flex;
- justify-content:space-between;
- align-items:center;
- padding:15px 40px;
- background:linear-gradient(90deg,#020617,#0f172a);
- border-bottom:2px solid #0ea5e9;
- box-shadow:0 0 25px rgba(14,165,233,0.6);
- position:sticky;
- top:0;
- z-index:1000;
-}
-
-header div{
- font-weight:700;
- letter-spacing:1px;
-}
-
-header div:first-child{
- font-size:20px;
- color:#22c55e;
- text-shadow:0 0 10px #22c55e;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#020617;
+border-bottom:2px solid #0ea5e9;
+position:sticky;
+top:0;
 }
 
 .center{
- font-size:28px;
- font-weight:900;
- background:linear-gradient(90deg,#0ea5e9,#22c55e);
- -webkit-background-clip:text;
- -webkit-text-fill-color:transparent;
- text-shadow:0 0 20px rgba(14,165,233,0.7);
+font-size:26px;
+font-weight:bold;
+color:#0ea5e9;
+letter-spacing:2px;
+text-shadow:0 0 10px #0ea5e9;
 }
 
 .profile-img{
- width:45px;
- height:45px;
- border-radius:50%;
- border:2px solid #0ea5e9;
- box-shadow:0 0 15px #0ea5e9;
- transition:0.3s;
+width:40px;
+height:40px;
+border-radius:50%;
+border:2px solid #0ea5e9;
+cursor:pointer;
 }
 
-.profile-img:hover{
- transform:scale(1.1);
- box-shadow:0 0 25px #22c55e;
-}
-.center{
- font-size:26px;
- color:#0ea5e9;
- letter-spacing:2px;
- text-shadow:0 0 10px #0ea5e9;
-}
-
-/* PROFILE IMAGE */
-.profile-img{
- width:40px;height:40px;border-radius:50%;
- object-fit:cover;border:2px solid #0ea5e9;
- cursor:pointer;
-}
+/* CATEGORY */
 
 .categories{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
- gap:20px;padding:30px
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+padding:30px;
 }
+
 .cat{
- background:#1e293b;
- padding:20px;border-radius:15px;text-align:center;cursor:pointer;
- transition:0.3s;
- box-shadow:0 0 10px #000
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+text-align:center;
+cursor:pointer;
+transition:0.3s;
 }
+
 .cat:hover{
- transform:scale(1.05);
- background:#0ea5e9;
+transform:scale(1.05);
+background:#0ea5e9;
 }
 
-.page{display:none;padding:20px}
-.active{display:block}
+/* PAGES */
 
-.slider{display:flex;overflow-x:auto;gap:10px;margin-top:10px}
-.slider::-webkit-scrollbar{display:none}
-.slide-img{min-width:120px;height:80px;border-radius:8px;background:#111}
+.page{
+display:none;
+padding:20px;
+}
 
-.id-box{background:#1e293b;padding:15px;border-radius:12px;margin-bottom:20px}
+.active{
+display:block;
+}
 
-.id-title{font-size:18px;font-weight:bold;margin-bottom:5px;color:#0ea5e9}
-.id-desc{font-size:14px;color:#cbd5f5;margin-bottom:10px}
+/* ID BOX */
+
+.id-box{
+background:#1e293b;
+padding:15px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.id-title{
+font-size:18px;
+font-weight:bold;
+margin-bottom:5px;
+color:#0ea5e9;
+}
+
+.id-desc{
+font-size:14px;
+margin-bottom:10px;
+}
 
 .buy-btn{
- margin-top:10px;padding:10px;border:none;border-radius:8px;
- background:#0ea5e9;color:#fff;width:100%;cursor:pointer
+margin-top:10px;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#0ea5e9;
+color:#fff;
+width:100%;
+cursor:pointer;
 }
+
+/* PRODUCTS */
 
 .products{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
- gap:20px
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 }
-.card{background:#1e293b;padding:15px;border-radius:12px;text-align:center}
+
+.card{
+background:#1e293b;
+padding:15px;
+border-radius:12px;
+text-align:center;
+}
+
+/* WHATSAPP */
 
 .whatsapp{
- position:fixed;bottom:20px;right:20px;
- background:#25D366;border-radius:50%;padding:15px;
- box-shadow:0 0 20px #25D366;cursor:pointer;
- animation:float 2s infinite
-}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-
-.back{margin-bottom:15px;cursor:pointer;color:#0ea5e9}
-
-
-
-
-/* Simple Floating Buttons */
-.cat{
- animation:floatCat 2s ease-in-out infinite;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+border-radius:50%;
+padding:15px;
+cursor:pointer;
 }
 
-@keyframes floatCat{
- 0%{transform:translateY(0)}
- 50%{transform:translateY(-6px)}
- 100%{transform:translateY(0)}
+.back{
+margin-bottom:15px;
+cursor:pointer;
+color:#0ea5e9;
 }
 
- 50%{filter:blur(12px) brightness(1.8)}
- 100%{filter:blur(5px) brightness(1)}
+video{
+width:100%;
+border-radius:10px;
+margin-top:10px;
 }
+
 </style>
 </head>
+
 <body>
+
 <header>
 <div class="center">ALI SHAH FF STORE</div>
-<!-- یہاں اپنی DP image کا link لگانا -->
-<img class="profile-img" onclick="contact()" src="your-profile.jpg"/>
+<img class="profile-img" onclick="contact()" src="walogo.jpg">
 </header>
+
+<!-- HOME -->
+
 <div class="categories" id="home">
+
 <div class="cat" onclick="openPage('ids')">Free Fire IDs</div>
 <div class="cat" onclick="openPage('bundles')">Premium Bundles</div>
 <div class="cat" onclick="openPage('giveaway')">Daily Giveaway</div>
+
 </div>
+
 <!-- IDS -->
+
 <div class="page" id="ids">
+
 <div class="back" onclick="goBack()">⬅ Back</div>
+
 <h2>Free Fire IDs</h2>
-<script>
-for(let i=1;i<=7;i++){
- document.write(`
- <div class='id-box'>
- <div class='id-title'>Level: 70 | ID ${i}</div>
- <div class='id-desc'>Rare skins, high rank account, full access available</div>
- <div class='slider'>
- ${Array(7).fill("<div class='slide-img'></div>").join("")}
- </div>
- <button class='buy-btn' onclick="buy('ID ${i}')">2500 PKR - Buy</button>
- </div>
- `);
-}
-</script>
+
+<!-- ID 1 WITH VIDEO -->
+
+<div class="id-box">
+
+<div class="id-title">Level: 66 | ID 1</div>
+
+<video controls>
+<source src="ID 1.mp4" type="video/mp4">
+</video>
+
+<div class="id-desc">
+Prime Level 5 , Flag emote , 7 EVOS GUNS  Rare skins,Green Criminal,Hourse Entry emote , 9k + Like high rank account, Account fully safe gurantee 100%
 </div>
+
+<button class="buy-btn" onclick="buy('ID 1')">
+2500 PKR - Buy
+</button>
+
+</div>
+
+<!-- OTHER IDS -->
+<div class="id-box">
+
+<div class="id-title">Level: 56 | ID 2</div>
+
+<video controls>
+<source src="ID 2.mp4" type="video/mp4">
+</video>
+
+<div class="id-desc">
+Rare skins, NEW RAMPAGE BUNDLE , PRIME LEVEL 4 ,YELLOW CRIMINAL , DRAGON ENTRY EMOTE , 5 EVOS GUNS FULL SAFE ID GURANTEE 100%
+</div>
+
+<button class="buy-btn" onclick="buy('ID 2')">
+2500 PKR - Buy
+</button>
+
+</div>
+<div class="id-box">
+
+<div class="id-title">Level: 67 | ID 3</div>
+
+<video controls>
+<source src="ID 3.mp4" type="video/mp4">
+</video>
+
+<div class="id-desc">
+PRIME LEVEL 3 , 9 EVO GUNS , RED ANGLIC PAINT , 8K + PLUS LIKE , THRONE EMOTE,FLAG EMOTE , FULL GURANTED AND SAFE ACCOUNT.
+</div>
+
+<button class="buy-btn" onclick="buy('ID 3')">
+2500 PKR - Buy
+</button>
+
+</div>
+
+</div>
+
 <!-- BUNDLES -->
+
 <div class="page" id="bundles">
+
 <div class="back" onclick="goBack()">⬅ Back</div>
+
 <h2>Premium Bundles</h2>
+
 <div class="products">
+
 <script>
+
 for(let i=1;i<=48;i++){
- document.write(`
- <div class='card'>
- <div style='height:150px;background:#111;border-radius:10px'></div>
- <button class='buy-btn' onclick="buy('Bundle ${i}')">500 PKR - Buy</button>
- </div>
- `);
+
+document.write(`
+
+<div class='card'>
+
+<div style='height:150px;background:#111;border-radius:10px'></div>
+
+<button class='buy-btn' onclick="buy('Bundle ${i}')">
+500 PKR - Buy
+</button>
+
+</div>
+
+`);
+
 }
+
 </script>
+
 </div>
+
 </div>
+
 <!-- GIVEAWAY -->
+
 <div class="page" id="giveaway">
+
 <div class="back" onclick="goBack()">⬅ Back</div>
+
 <h2>Daily Giveaway</h2>
-<div class="id-box">Join Daily Giveaway
-<button class="buy-btn" onclick="contact()">Join Now</button>
+
+<div class="id-box">
+
+Join Daily Giveaway
+
+<button class="buy-btn" onclick="contact()">
+Join Now
+</button>
+
 </div>
+
 </div>
+
 <div class="whatsapp" onclick="contact()">💬</div>
+
 <script>
+
 function openPage(id){
- document.getElementById('home').style.display='none';
- document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
- document.getElementById(id).classList.add('active');
+document.getElementById('home').style.display='none'
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'))
+document.getElementById(id).classList.add('active')
 }
 
 function goBack(){
- document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
- document.getElementById('home').style.display='grid';
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'))
+document.getElementById('home').style.display='grid'
 }
 
 function buy(product){
- window.open(`https://wa.me/923422531403?text=I want to buy ${product}`);
+window.open(`https://wa.me/923422531403?text=I want to buy ${product}`)
 }
 
 function contact(){
- window.open('https://wa.me/923422531403');
+window.open('https://wa.me/923422531403')
 }
+
 </script>
+
 </body>
 </html>
